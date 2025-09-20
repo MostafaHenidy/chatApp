@@ -8,14 +8,18 @@
     <title>{{ config('app.name', 'Chat App') }}</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700" rel="stylesheet" />
+    @livewireStyles
     <link rel="stylesheet" href="{{ asset('front-assets/styles.css') }}">
 </head>
 
 <body>
     <div id="app">
-        @yield('content')
+        <div class="chat-container">
+            @include('front.aside')
+            @yield('content')
+        </div>
     </div>
-    <script src="{{ asset('front-assets/script.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>
